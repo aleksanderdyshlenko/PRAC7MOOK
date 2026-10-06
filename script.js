@@ -1,33 +1,25 @@
-// ===== ВАРИАНТ 2: картинка по ссылке =====
-// Вставь сюда прямую ссылку на картинку
-const BG_URL = "https://i.ibb.co.com/RpxXNqr4/artworks-RKYCj-PSQp6-Ag-HTNa-d-YZl-OQ-t500x500.jpg";
+// Получаем элементы по id
+const button = document.getElementById("myButton");
+const text   = document.getElementById("text");
 
-// Ставим картинку на фон при загрузке страницы
-document.body.style.backgroundImage = `url('${BG_URL}')`;
-document.body.style.backgroundSize = "cover";
-document.body.style.backgroundPosition = "center";
-document.body.style.backgroundRepeat = "no-repeat";
-
-// ===== Логика кнопок =====
-
-// Получаем элементы со страницы по их id
-let button = document.getElementById("myButton");
-let text = document.getElementById("text");
-let bgButton = document.getElementById("bgButton");
-
-// Кнопка "Нажми меня" — меняет текст и стиль
+// Обработчик клика на кнопку
 button.addEventListener("click", function () {
-    text.textContent = "Кнопка была нажата!";
-    text.style.color = "green";
-    text.style.fontSize = "22px";
+  text.textContent = "🎉 Кнопка была нажата!";
+  text.style.color = "#27ae60";
+  text.style.fontSize = "24px";
+  text.style.fontWeight = "bold";
 });
 
-// Кнопка "Изменить фон" — снова ставит картинку
+// Функция смены фона
 function changeBackground() {
-    document.body.style.backgroundImage = `url('${BG_URL}')`;
-    document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
-    document.body.style.backgroundRepeat = "no-repeat";
-}
+  const colors = [
+    "linear-gradient(135deg, #ff9a9e, #fad0c4)",
+    "linear-gradient(135deg, #a1c4fd, #c2e9fb)",
+    "linear-gradient(135deg, #fbc2eb, #a6c1ee)",
+    "linear-gradient(135deg, #84fab0, #8fd3f4)",
+    "linear-gradient(135deg, #667eea, #764ba2)"
+  ];
 
-bgButton.addEventListener("click", changeBackground);
+  const random = Math.floor(Math.random() * colors.length);
+  document.body.style.background = colors[random];
+}
