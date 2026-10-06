@@ -1,21 +1,33 @@
+// ===== ВАРИАНТ 2: картинка по ссылке =====
+// Вставь сюда прямую ссылку на картинку
+const BG_URL = "https://i.imgur.com/ВАША_КАРТИНКА.jpg";
+
+// Ставим картинку на фон при загрузке страницы
+document.body.style.backgroundImage = `url('${BG_URL}')`;
+document.body.style.backgroundSize = "cover";
+document.body.style.backgroundPosition = "center";
+document.body.style.backgroundRepeat = "no-repeat";
+
+// ===== Логика кнопок =====
+
 // Получаем элементы со страницы по их id
 let button = document.getElementById("myButton");
 let text = document.getElementById("text");
 let bgButton = document.getElementById("bgButton");
 
-// Добавляем обработчик события "click" на первую кнопку
+// Кнопка "Нажми меня" — меняет текст и стиль
 button.addEventListener("click", function () {
-    // Меняем текст элемента
     text.textContent = "Кнопка была нажата!";
-    // Меняем стиль элемента через JS
     text.style.color = "green";
     text.style.fontSize = "22px";
 });
 
-// Функция смены фона страницы
+// Кнопка "Изменить фон" — снова ставит картинку
 function changeBackground() {
-    document.body.style.backgroundColor = "#e0e0e0";
+    document.body.style.backgroundImage = `url('${BG_URL}')`;
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+    document.body.style.backgroundRepeat = "no-repeat";
 }
 
-// Привязываем функцию смены фона ко второй кнопке
 bgButton.addEventListener("click", changeBackground);
