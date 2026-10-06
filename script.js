@@ -1,6 +1,6 @@
 // ===== ВАРИАНТ 2: картинка по ссылке =====
 // Вставь сюда прямую ссылку на картинку
-const BG_URL = "https://i.imgur.com/ВАША_КАРТИНКА.jpg";
+const BG_URL = "https://i.ibb.co.com/RpxXNqr4/artworks-RKYCj-PSQp6-Ag-HTNa-d-YZl-OQ-t500x500.jpg";
 
 // Ставим картинку на фон при загрузке страницы
 document.body.style.backgroundImage = `url('${BG_URL}')`;
